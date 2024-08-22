@@ -1,6 +1,6 @@
 # Selenium Automation Framework(with Java)
-Author  - Pramod Dutta
-Website - https:/sdet.live
+Author  - Divakar D
+
 
 ### Tech Stack of Web Automation
 
