@@ -50,9 +50,12 @@ public class DriverManager {
 
     }
 
-    public static void down(){
+    public static void down() {
 
-        driver.quit();
+        if (driver != null) {
+            driver.quit();
+
+        }
     }
 
 }

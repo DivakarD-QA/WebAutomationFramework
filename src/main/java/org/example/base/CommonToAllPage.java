@@ -1,10 +1,12 @@
 package org.example.base;
 
+import org.example.utils.PropertyReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.IOException;
 import java.time.Duration;
 
 import static org.example.driver.DriverManager.getDriver;
@@ -14,8 +16,18 @@ public class CommonToAllPage {
 //
 // Open File, Open Data Base Connection You can write code here
 
-    public void openVWOLoginURL(){
-        getDriver();
+    public void openVWOLoginURL(String URL) throws IOException {
+        switch (URL){
+            case "qa":
+                getDriver().get(PropertyReader.readKey("qa_url"));
+                break;
+            case "uat":
+                getDriver().get(PropertyReader.readKey("uat_url"));
+                break;
+            default:
+                getDriver().get(PropertyReader.readKey("url"));
+
+        }
 
     }
 

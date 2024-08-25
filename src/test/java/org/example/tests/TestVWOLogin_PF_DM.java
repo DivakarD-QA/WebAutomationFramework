@@ -26,8 +26,9 @@ public class TestVWOLogin_PF_DM {
     public void loginVWONegativeTest() throws IOException {
 
         logger.info("Starting Test");
-        driver.get("https://app.vwo.com");
+
         LoginPage_PF loginPagePf = new LoginPage_PF(driver);
+        loginPagePf.openVWOLoginURL("uat");
         String error_msg = loginPagePf.loginToVWOInvalidCreds();
         logger.info("Verifying the Result");
         Assert.assertEquals(error_msg, "Your email, password, IP address or location did not match");
