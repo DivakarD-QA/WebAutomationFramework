@@ -1,6 +1,6 @@
 package org.example.tests;
 
-import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.*;
 import org.example.page.pageFactory.LoginPage_PF;
 
 import org.testng.Assert;
@@ -13,8 +13,8 @@ import java.io.IOException;
 
 import static org.example.driver.DriverManager.*;
 
-public class TestVWOLogin_PF_DM {
-    private static final Logger logger = LogManager.getLogger(TestVWOLogin_PF_DM.class);
+public class TestVWOLogin_PF_DM_UAT {
+    private static final Logger logger = LogManager.getLogger(TestVWOLogin_PF_DM_UAT.class.getName());
 
 
     @BeforeTest
@@ -25,7 +25,7 @@ public class TestVWOLogin_PF_DM {
     @Test
     public void loginVWONegativeTest() throws IOException {
 
-        logger.info("Starting Test");
+        logger.info("Start Logging");
 
         LoginPage_PF loginPagePf = new LoginPage_PF(driver);
         loginPagePf.openVWOLoginURL("uat");
