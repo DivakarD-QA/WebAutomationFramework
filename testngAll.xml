@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" parallel="methods" name="WebAutomationFramework">
+        <classes>
+            <class name="org.example.tests.TestVWOLogin"> </class>
+            <class name="org.example.tests.TestVWOLogin_PF"> </class>
+            <class name="org.example.tests.TestVWOLogin_PF_DM_QA"> </class>
+            <class name="org.example.tests.TestVWOLogin_PF_DM_UAT"> </class>
+            <class name="org.example.tests.TestVWOLogin_POM"> </class>
+
+        </classes>
+
+    </test>
+</suite>

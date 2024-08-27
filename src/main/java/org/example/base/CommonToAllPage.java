@@ -1,5 +1,6 @@
 package org.example.base;
 
+import org.example.driver.DriverManager;
 import org.example.utils.PropertyReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -12,9 +13,12 @@ import java.time.Duration;
 import static org.example.driver.DriverManager.getDriver;
 
 public class CommonToAllPage {
-// If you want to call something before every Page Object Class call, Put your Code here")
-//
-// Open File, Open Data Base Connection You can write code here
+
+
+    public CommonToAllPage(){
+        // If you want to call something before every Page Object Class call, Put your Code here");
+        // Open File, Open Data Base Connection You can write code here
+    }
 
     public void openVWOLoginURL(String URL) throws IOException {
         switch (URL){
@@ -33,7 +37,7 @@ public class CommonToAllPage {
 
 
     public void clickElement(By by){
-         getDriver().findElement(by).click();
+        getDriver().findElement(by).click();
     }
     public void clickElement(WebElement by){
         by.click();
@@ -60,6 +64,16 @@ public class CommonToAllPage {
 
     public WebElement getElement(WebElement element) {
         return element;
+    }
+
+    public void iWaitForElementToBeVisible(WebElement loc,String url) {
+        try {
+            WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(20));
+            wait.until(ExpectedConditions.visibilityOfAllElements(loc));
+            wait.until(ExpectedConditions.urlContains(url));
+        } catch (Exception e) {
+            System.out.println("Failed to Wait!: " + e.toString());
+        }
     }
 
 

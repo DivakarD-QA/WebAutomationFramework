@@ -1,5 +1,8 @@
 package org.example.page.pageObject;
 
+import org.example.base.CommonToAllPage;
+import org.example.driver.DriverManager;
+import org.example.driver.DriverManagerTL;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -7,12 +10,18 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class LoginPage_POM {
+public class LoginPage_POM extends CommonToAllPage {
     // Contains
     // Page Locators
     // Page Action
 
     WebDriver driver;
+
+    // where we need to give URL from test
+    public void openURL(String url){
+//        DriverManagerTL.getDriver().get(url);
+        DriverManager.getDriver().get(url);
+    }
 
     public LoginPage_POM(WebDriver driver){
         this.driver = driver;
